@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
+use App\Models\Card;
 
 class Play extends Command
 {
@@ -37,6 +38,6 @@ class Play extends Command
      */
     public function handle()
     {
-        
+        Card::getCards();
     }
 }

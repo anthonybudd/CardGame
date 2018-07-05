@@ -111,17 +111,17 @@ class Play extends Command
         $nextCard = $this->cards->random(1)->first();
 
         // @todo bad user input? 
-        $guess = $this->anticipate('Higher or Lower?', ['higher', 'lower']);
+        $guess = $this->anticipate('Is the next card going to be Higher or Lower?', ['higher', 'lower']);
         
         
-        if ($guess === 'higher' && $card->isHigherThan($nextCard)) {
+        if ($guess === 'higher' && $nextCard->isHigherThan($card)) {
             $this->score++;
             $this->line('');
             $this->line('');
             $this->line('Correct!');
             $this->displayCard($nextCard);
             $this->newRound();
-        } elseif ($guess === 'lower' && $card->isLowerThan($nextCard)) {
+        } elseif ($guess === 'lower' && $nextCard->isLowerThan($card)) {
             $this->score++;
             $this->line('');
             $this->line('');

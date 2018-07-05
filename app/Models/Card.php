@@ -60,7 +60,7 @@ class Card extends Model
 
     public function isHigherThan(Card $otherCard)
     {
-        $table = ['A', '2', '3', '4', '5', '6', '7', '8', '9', 'J', 'Q', 'K'];
+        $table = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
         $cardValue = array_search($this->value, $table);
         $otherCardValue = array_search($otherCard->value, $table);
         return $cardValue > $otherCardValue;
